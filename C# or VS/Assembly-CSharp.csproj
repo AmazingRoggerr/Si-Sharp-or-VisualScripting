@@ -41,7 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\C#\Movement.cs" />
+    <Compile Include="Assets\Content\Scripts\C#\Movement.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Soft\Gamedev\Unity\Hub\Editor\2021.3.36f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace UzGameDev
@@ -8,26 +7,25 @@ namespace UzGameDev
         [SerializeField] private float moveSpeed = 5;
         [SerializeField] private float rotateSpeed = 600;
         
+        private Vector3 moveDirection;
         private Rigidbody body;
+        
         private Animator animator;
-
         private readonly int Velocity = Animator.StringToHash("Velocity");
         
-        private Vector3 moveDirection;
-        
+        //===============================================================
         private void Awake()
         {
             body = GetComponent<Rigidbody>();
             animator = GetComponent<Animator>();
         }
-
         //===============================================================
         private void FixedUpdate()
         {
             var inputX = Input.GetAxis("Horizontal");
             var inputY = Input.GetAxis("Vertical");
             moveDirection = new Vector3(inputX * moveSpeed, body.velocity.y, inputY * moveSpeed);
-
+            
             body.velocity = moveDirection;
         }
         //===============================================================
@@ -40,5 +38,6 @@ namespace UzGameDev
             var rotateDirection = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotateDirection, rotateSpeed * Time.deltaTime);
         }
+        //===============================================================
     }
 }
